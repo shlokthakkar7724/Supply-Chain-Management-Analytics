@@ -1,34 +1,143 @@
-# Supply-Chain-Management-Analytics
-This project builds a dynamic Material Requirements Planning (MRP) dashboard that tracks customer orders, SKU quantities, and manufacturing time for a multi-SKU automotive parts supplier. Visualizations and data modeling are performed using Excel, SQL, Tableau, and Jupyter Notebooks.
+# 📦 Supply Chain Management
+
+This project simulates a multi-client automotive parts supply chain by modeling customer orders, calculating manufacturing requirements based on SKU-level BOMs, and visualizing KPIs through a Tableau dashboard. It includes demand generation for 250 customers, BOM construction for 20 SKUs, and dynamic manufacturing time calculations.
 
 ---
 
-## 🚀 Overview
+## 🧠 What is MRP and BOM?
 
-- Analyzed 250+ customers ordering 20 unique SKUs (e.g., bumpers, alloy wheels).
-- Created a first-come-first-serve (FCFS) scheduling model using manufacturing time.
-- Developed Tableau dashboards to visualize BOM complexity and SKU-level manufacturing load.
+### 🛠️ Bill of Materials (BOM)
+A Bill of Materials (BOM) is a structured list of all components, subassemblies, and raw materials required to build a finished product (SKU). Each SKU has its own BOM that defines:
+- The components used
+- Quantity of each component
+- Estimated time to produce each component
+
+For example, a "Front Bumper" might include:
+- 2 steel sheets
+- 1 plastic molding
+- 6 fasteners  
+Each with a specific manufacturing time in hours.
+
+### 📋 Material Requirements Planning (MRP)
+MRP is a planning technique used to determine:
+- What components are needed
+- How much is required
+- When it must be produced  
+MRP uses the BOM of each SKU, customer demand (orders), and production lead times to calculate the total manufacturing time and material availability.
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-| Tool       | Purpose                               |
-|------------|----------------------------------------|
-| Excel      | Initial data entry and formatting      |
-| SQL        | Data transformation and aggregation    |
-| Tableau    | Visualization and interactive dashboard|
-| Python (Pandas + Matplotlib) | Data wrangling and exploratory analysis |
+| Tool       | Purpose                                       |
+|------------|-----------------------------------------------|
+| Excel      | Base dataset for customer orders              |
+| Python     | Data simulation, processing, BOM/MRP logic    |
+| SQL        | Aggregation and transformation (if used)      |
+| Tableau    | KPI visualization and dashboard design        |
 
 ---
 
-## 📊 Key KPIs
+## 🛆 Project Workflow
 
-- Total SKU Quantity per Customer  
-- Unique SKUs Ordered (SKU diversity)  
-- Total Manufacturing Time per Order and per SKU  
-- Most Ordered SKUs  
-- SKU Mix for Top Customers
+### 🔹 Step 1: SKU & Customer Simulation
+- Defined 20 SKUs: automotive parts like bumpers, mirrors, wheels, etc.
+- Created a pool of 250 realistic customers
+- Randomly generated customer orders:
+  - SKU ordered
+  - Quantity
+  - Order date
+
+### 🔹 Step 2: Bill of Materials (BOM) Construction
+- Each SKU is mapped to 2–5 components from a library of 50
+- Each component has:
+  - A quantity-per-unit (QPU)
+  - A fixed manufacturing time (in hours)
+- Result: a component-level BOM for each SKU
+
+### 🔹 Step 3: Manufacturing Time Calculation (MRP)
+- Joined BOM with orders to calculate:
+  - Total time needed to produce each order
+  - Sum of (component quantity × time × order quantity)
+- Output: per-order manufacturing time and per-SKU totals
+
+### 🔹 Step 4: Tableau Visualization
+- Loaded final data into Tableau
+- Created sheets for:
+  - Total quantity per SKU
+  - Manufacturing time by customer
+  - SKU diversity per customer
+  - Pie charts for top-customer SKU mix
+  - KPI cards (total orders, unique SKUs, etc.)
+
+### 🔹 Step 5: Dashboard Integration
+- Combined sheets into an interactive dashboard
+- Added filters for customer and SKU selection
+- Configured dashboard layout using automatic sizing
 
 ---
 
+## 📊 KPIs Tracked
+
+- Total Orders per Customer  
+- Total Quantity per SKU  
+- Unique SKUs Ordered per Customer  
+- Total Manufacturing Time per SKU  
+- SKU Mix for Top Customer  
+- SKU Contribution by Volume
+
+---
+
+## 📁 File Structure
+
+```plaintext
+├── data/
+│   └── customer_order_summary.xlsx          # Final simulated data
+├── dashboards/
+│   └── Supply_chain_Dashboard.pdf           # Tableau dashboard export
+├── notebooks/
+│   └── supply_chain_analysis_proejct_base.ipynb  # BOM + MRP logic in Python
+├── images/
+│   ├── total_manufacturing_time_per_sku.png
+│   ├── top_30_customers_by_mfg_time.png
+│   └── manufacturing_time_per_order_by_customer.png
+└── README.md
+```
+
+---
+
+## 📸 Visualizations
+
+### 1️⃣ Total Manufacturing Time per SKU
+This bar chart shows which SKUs consume the most production hours, helping prioritize resource allocation based on demand and complexity.
+
+![Total Manufacturing Time per SKU](images/total_manufacturing_time_per_sku.png)
+
+---
+
+### 2️⃣ Top 30 Customers by Manufacturing Time
+This horizontal bar chart displays the top 30 customers ranked by the total time it would take to fulfill their orders, making it easy to identify high-load clients.
+
+![Top 30 Customers](images/top_30_customers_by_mfg_time.png)
+
+---
+
+### 3️⃣ Manufacturing Time per Customer Order (Grouped by SKU)
+This clustered bar chart breaks down the total manufacturing time for every customer order, segmented by SKU. It gives insight into which customers are ordering time-intensive combinations.
+
+![Manufacturing Time per Order](images/manufacturing_time_per_order_by_customer.png)
+
+---
+
+## 📈 Future Enhancements
+
+- Integrate inventory availability & reorder alerts
+- Forecast demand using historical patterns
+- Add procurement lead time simulation
+- Embed Tableau Public for live dashboard access
+
+---
+
+## 👨‍💼 Author
+
+Created by [Your Name]  
