@@ -116,7 +116,7 @@ The final Tableau dashboard consolidates all key supply chain metrics:
 - Bottom chart highlights customer-wise SKU order volume
 - Side metrics include overall totals for SKUs, customers, and manufacturing time
 
-![Tableau Dashboard Overview]()
+![Tableau Dashboard Overview](Tableau_dashboard.png)
 
 
 ## 📈 Future Enhancements
