@@ -110,6 +110,14 @@ This clustered bar chart breaks down the total manufacturing time for every cust
 ![Manufacturing Time per Order](Total_manufacturing_time_per_SKU.png)
 
 ---
+### 🔹 Tableau Dashboard Overview
+The final Tableau dashboard consolidates all key supply chain metrics:
+- Top chart shows total manufacturing time per customer broken down by SKU
+- Bottom chart highlights customer-wise SKU order volume
+- Side metrics include overall totals for SKUs, customers, and manufacturing time
+
+![Tableau Dashboard Overview]()
+
 
 ## 📈 Future Enhancements
 
