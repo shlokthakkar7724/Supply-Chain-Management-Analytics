@@ -93,7 +93,7 @@ MRP uses the BOM of each SKU, customer demand (orders), and production lead time
 ### 1️⃣ Total Manufacturing Time per SKU
 This bar chart shows which SKUs consume the most production hours, helping prioritize resource allocation based on demand and complexity.
 
-![Total Manufacturing Time per SKU](Total_Manufacturing_Time.png)
+![Manufacturing Time per Order](Total_manufacturing_time_per_SKU.png)
 
 ---
 
@@ -107,8 +107,8 @@ This horizontal bar chart displays the top 30 customers ranked by the total time
 ### 3️⃣ Manufacturing Time per Customer Order (Grouped by SKU)
 This clustered bar chart breaks down the total manufacturing time for every customer order, segmented by SKU. It gives insight into which customers are ordering time-intensive combinations.
 
-![Manufacturing Time per Order](Total_manufacturing_time_per_SKU.png)
 
+![Total Manufacturing Time per SKU](Total_Manufacturing_Time.png)
 ---
 ### 🔹 Tableau Dashboard Overview
 The final Tableau dashboard consolidates all key supply chain metrics:
