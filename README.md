@@ -130,4 +130,4 @@ The final Tableau dashboard consolidates all key supply chain metrics:
 
 ## 👨‍💼 Author
 
-Created by [Your Name]  
+Created by Shlok Thakkar  
